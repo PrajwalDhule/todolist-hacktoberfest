@@ -21,7 +21,8 @@
                     <label>
                         <input type="checkbox" name="checkbox" onChange="this.form.submit();" value="<%= i._id %>">
                         <p><%= i.name %></p>
-                        <p><%= i.deadline %></p>
+                        <p><%= i.deadline_time %></p>
+                        <p><%= i.deadline_date %></p>
                     </label>
                     
                 </div>
@@ -31,7 +32,8 @@
 
         <form action="/" method="post" class="item">
             <input type="text" name="toDo" placeholder="New Item">
-            <input type="text" name="deadline" placeholder="deadline">
+            <input type="time" name="deadline_time" placeholder="deadline time">
+            <input type="date" name="deadline_date" placeholder="deadline date">
             <button type="submit" name="list" value=<%= listTitle %> >+</button>
         </form>
       <script>

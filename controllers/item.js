@@ -4,15 +4,18 @@ const List = require("../models/list");
 
 const item1 = new Item({
   name: "Welcome to your ToDo List",
-  deadline: "10:00",
+  deadline_time: "10:00",
+  deadline_date: "2022-10-18",
 });
 const item2 = new Item({
   name: " <-- Hit this box to delete this task",
-  deadline: "12:00",
+  deadline_time: "12:00",
+  deadline_date: "2022-10-19",
 });
 const item3 = new Item({
   name: "Hit + button to add a new task",
-  deadline: "15:00",
+  deadline_time: "15:00",
+  deadline_date: "2022-10-20",
 });
 const defaultItems = [item1, item2, item3];
 
@@ -43,7 +46,8 @@ exports.getAllItems = (req, res) => {
 exports.postItem = (req, res) => {
   // getting the item name/content
   let itemName = req.body.toDo;
-  let itemDeadline = req.body.deadline;
+  let itemDeadlineTime = req.body.deadline_time;
+  let itemDeadlineDate = req.body.deadline_date;
 
   // getting the list title
   let listName = req.body.list;
@@ -51,7 +55,8 @@ exports.postItem = (req, res) => {
   // creating the list item
   const newItem = new Item({
     name: itemName,
-    deadline: itemDeadline
+    deadline_time: itemDeadlineTime,
+    deadline_date: itemDeadlineDate
   });
 
   // checking if the route is default or not

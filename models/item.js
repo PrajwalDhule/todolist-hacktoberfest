@@ -5,7 +5,11 @@ const itemsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  deadline: {
+  deadline_time: {
+    type: String,
+    default: ""
+  },
+  deadline_date: {
     type: String,
     default: ""
   },
